@@ -824,15 +824,6 @@ Int APIENTRY WinMain( HINSTANCE hInstance, HINSTANCE hPrevInstance,
 		// initialize the memory manager early
 		initMemoryManager();
 
-		/// @todo remove this force set of working directory later
-		Char buffer[ _MAX_PATH ];
-		GetModuleFileName( nullptr, buffer, sizeof( buffer ) );
-		if (Char *pEnd = strrchr(buffer, '\\'))
-		{
-			*pEnd = 0;
-		}
-		::SetCurrentDirectory(buffer);
-
 
 		#ifdef RTS_DEBUG
 			// Turn on Memory heap tracking
